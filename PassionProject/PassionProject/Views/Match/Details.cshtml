@@ -1,0 +1,20 @@
+﻿@model PassionProject.Models.MatchDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<a href="/Match/List">Go to Matches</a>
+<br />
+<a href="/Match/Edit/@Model.MatchId">Update</a>
+<br />
+
+<a style="color:#ab2020;" href="/Match/DeleteConfirm/@Model.MatchId">Delete</a>
+<h2>Home Team : @Model.HomeTeamName</h2>
+<div>Opponent Team : @Model.OpponentTeam</div>
+<div>Date : @Model.Date</div>
+<div>Venue: @Model.VenueName</div>
+
+
+

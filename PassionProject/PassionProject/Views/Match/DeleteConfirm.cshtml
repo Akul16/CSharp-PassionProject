@@ -1,0 +1,12 @@
+﻿﻿@model PassionProject.Models.MatchDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Match?</h2>
+<a href="/Match/List">Cancel</a>
+<h2>@Model.HomeTeamName Vs. @Model.OpponentTeam</h2>
+<form action="/Match/Delete/@Model.MatchId" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

@@ -1,0 +1,40 @@
+﻿@model PassionProject.Models.ViewModels.UpdateMatch
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Match</h2>
+<form action="/Match/Update/@Model.SelectedMatch.MatchId" method="POST">
+    <div style="display:none;">
+        <input type="text" name="MatchId" value="@Model.SelectedMatch.MatchId" />
+    </div>
+    <div>
+        <label>Home Team:</label><input type="number" name="HomeTeamId" value="@Model.SelectedMatch.HomeTeamName" />
+</div>
+    <div>
+        <label>Opponent Team:</label> <input type="text" name="OpponentTeam" value="@Model.SelectedMatch.OpponentTeam" />
+    </div>
+    <div>
+        <label>Date:</label> <input type="datetime-local" name="Date" value="@Model.SelectedMatch.Date" />
+    </div>
+    <div>
+        <label>Venue:</label>
+        <select name="VenueId">
+            @foreach (var Venue in Model.VenueOptions)
+            {
+                string selected = "";
+                if (Venue.VenueName == Model.SelectedMatch.VenueName)
+                {
+                    selected = "selected";
+                }
+                <option value="@Venue.VenueId" @selected>@Venue.VenueName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Match" />
+
+    </div>
+</form>

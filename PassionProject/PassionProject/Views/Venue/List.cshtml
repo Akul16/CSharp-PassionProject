@@ -1,0 +1,21 @@
+﻿﻿@model IEnumerable<PassionProject.Models.VenueDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Venue/New">New Venue</a>
+
+@foreach (var Venue in Model)
+{
+    <h2>@Venue.VenueName</h2>
+    <div>Location: @Venue.Location</div>
+    <div>Capacity: @Venue.Capacity</div>
+
+    <div><a href="/Venue/Edit/@Venue.VenueId">Edit</a></div>
+    <div><a href="/Venue/DeleteConfirm/@Venue.VenueId">Delete</a></div>
+
+
+    <a href="@Url.Action("ListMatchesForVenue", "Match", new { venueId = Venue.VenueId })">View Matches</a>
+}
+

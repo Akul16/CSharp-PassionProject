@@ -1,0 +1,38 @@
+﻿@model PassionProject.Models.ViewModels.ViewMatch
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Match</h2>
+<form action="/Match/Create" method="POST">
+    <div>
+        <label>Home Team: </label><input type="number" name="HomeTeamId" id="HomeTeamId" value="" />
+        @*<select name="TeamId">
+            @foreach (var Team in Model.TeamId)
+            {
+                <option value="@Team.HomeTeamId">@Team.HomeTeamId</option>
+
+            }
+        </select>*@
+    </div>
+    <div>
+        <label>Opponent Team:</label> <input type="text" name="OpponentTeam" id="OpponentTeam" value="" />
+    </div>
+
+    <div>
+        <label>Date:</label> <input type="datetime-local" name="Date" id="Date" value="" />
+    </div>
+    <div>
+        <label>Venue :</label>
+        <select name="VenueId">
+            @foreach (var Venue in Model.VenueOptions)
+            {
+                <option value="@Venue.VenueId">@Venue.VenueName</option>
+
+            }
+        </select>
+    </div>
+    <input type="submit" value="Add Match" />
+
+</form>
+

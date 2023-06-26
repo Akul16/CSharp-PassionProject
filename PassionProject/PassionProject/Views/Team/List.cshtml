@@ -1,0 +1,19 @@
+﻿﻿@model IEnumerable<PassionProject.Models.TeamDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Team/New">New Team</a>
+
+@foreach (var Team in Model)
+{
+    <h2>@Team.TeamName</h2>
+
+    <div><a href="/Team/Edit/@Team.TeamId">Edit</a></div>
+    <div><a href="/Team/DeleteConfirm/@Team.TeamId">Delete</a></div>
+
+
+    <a href="@Url.Action("ListMatchesForTeam", "Match", new { TeamId = Team.TeamId})">View Matches</a>
+
+}

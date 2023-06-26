@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PassionProject.Models.MatchDto>
+
+@{
+    ViewBag.Title = "ListMatchesForTeam";
+}
+
+<h2>List Matches For Team</h2>
+
+<ul>
+    @foreach (var match in Model)
+    {
+        <li>@match.HomeTeamName VS @match.OpponentTeam</li>
+    }
+</ul>

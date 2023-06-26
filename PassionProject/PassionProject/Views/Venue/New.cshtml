@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PassionProject.Models.VenueDto>
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Venue</h2>
+<form action="/Venue/Create" method="POST">
+    <div>
+        <label>Venue Name: </label> <input type="text" name="VenueName" id="VenueName" value="" />
+    </div>
+    <div>
+        <label>Location:</label> <input type="text" name="Location" id="Location" value="" />
+    </div>
+
+    <div>
+        <label>Capacity</label> <input type="number" name="Capacity" id="Capacity" value="" />
+    </div>
+   
+    <input type="submit" value="Add Venue" />
+
+</form>

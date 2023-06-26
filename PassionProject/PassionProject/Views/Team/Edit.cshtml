@@ -1,0 +1,17 @@
+﻿@model PassionProject.Models.TeamDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Team</h2>
+<form action="/Team/Update/@Model.TeamId" method="POST">
+    <div style="display:none;">
+        <input type="text" name="TeamId" value="@Model.TeamId" />
+    </div>
+    <div>
+        <label>Team Name: </label> <input type="text" name="TeamName" id="TeamName" value="@Model.TeamName" />
+    </div>
+    <div>
+        <input type="submit" value="Update Team" />
+    </div>
+</form>
